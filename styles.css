@@ -1,0 +1,145 @@
+/* Background for the entire body with a subtle gradient overlay */
+body {
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: white;
+  min-height: 100vh;
+  transition: background 0.5s ease-in-out;
+}
+
+/* Overlay to darken background for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 77, 64, 0.75); /* semi-transparent teal overlay */
+  z-index: -1;
+}
+
+/* Header with subtle shadow and background blur */
+header {
+  background: rgba(0, 77, 64, 0.85);
+  color: #a5d6a7;
+  padding: 15px 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Main container with translucent background and subtle shadow */
+main {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+  max-width: 600px;
+  width: 100%;
+  padding: 25px 30px;
+  margin-bottom: 40px;
+}
+
+/* Section backgrounds - add soft card flip animation on tab switch */
+.tracker-section {
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: #e0f2f1;
+  /* Add animation */
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Add nice fade in and slide up animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nav bar style with glass effect */
+#trackerNav {
+  background: rgba(0, 77, 64, 0.8);
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  padding: 12px 0;
+  margin-bottom: 25px;
+}
+
+/* Hover effect on nav buttons */
+.nav-btn:hover {
+  border-bottom: 3px solid #b2dfdb;
+  color: #b2dfdb;
+  transform: scale(1.1);
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+/* Active nav button scaling */
+.nav-btn.active {
+  border-bottom: 3px solid #a5d6a7;
+  color: #a5d6a7;
+  font-weight: 700;
+  transform: scale(1.2);
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+/* Buttons with a glowing effect */
+button {
+  background: #004d40;
+  box-shadow: 0 0 10px #26a69a;
+  transition: box-shadow 0.3s ease;
+  border-radius: 8px;
+}
+
+button:hover {
+  box-shadow: 0 0 15px #a5d6a7;
+}
+
+/* Input and textarea with transparent dark backgrounds */
+input,
+select,
+textarea {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: background 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #b2dbdb;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+  border-color: #a5d6a7;
+}
+
+/* Congratulations box style */
+#congratulation {
+  background: rgba(165, 214, 167, 0.7);
+  color: #004d40;
+  border: 2px solid #a5d6a7;
+  font-weight: 700;
+  box-shadow: 0 0 15px #004d40;
+}
+
+/* Misc tweaks for lighter text */
+label,
+h2,
+h3,
+p {
+  color: #b2dfdb;
+}

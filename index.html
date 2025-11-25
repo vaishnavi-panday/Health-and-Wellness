@@ -1,0 +1,116 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Health & Wellness Tracker</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>Health & Wellness Tracker</header>
+
+<main>
+  <!-- Interactive welcome -->
+  <section id="welcome">
+    <h1>Welcome to Your Wellness Tracker</h1>
+    <p>Track water intake, sleep, mood, and plan your day for a healthier lifestyle!</p>
+    <button id="startBtn">Get Started</button>
+  </section>
+
+  <!-- Login -->
+  <section id="loginSection" class="hidden">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username</label>
+      <input id="username" type="text" required placeholder="Enter username" />
+      
+      <label for="password">Password</label>
+      <input id="password" type="password" required placeholder="Enter password" />
+      
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <!-- Main wellness tracker page -->
+  <section id="trackerPage" class="hidden">
+    <!-- Navigation bar -->
+    <nav id="trackerNav">
+      <button class="nav-btn" data-section="userDetailsSection">User Details</button>
+      <button class="nav-btn" data-section="waterTracker">Water Intake</button>
+      <button class="nav-btn" data-section="sleepTracker">Sleep</button>
+      <button class="nav-btn" data-section="moodTracker">Mood</button>
+      <button class="nav-btn" data-section="dayPlan">Day Planning</button>
+      <button class="nav-btn" data-section="exercisePlanner">Exercise Planner</button>
+    </nav>
+
+    <!-- Sections -->
+    <div class="tracker-section" id="userDetailsSection">
+      <h2>Your Physical Details</h2>
+      <form id="userDetailsForm">
+        <label for="height">Height (cm)</label>
+        <input id="height" type="number" min="50" max="300" required />
+        
+        <label for="weight">Weight (kg)</label>
+        <input id="weight" type="number" min="20" max="500" required />
+        
+        <button type="submit">Save Details</button>
+      </form>
+    </div>
+
+    <div class="tracker-section" id="waterTracker">
+      <h2>Water Intake (ml)</h2>
+      <input id="waterInput" type="number" min="0" placeholder="Add water intake (ml)" />
+      <button id="addWaterBtn">Add</button>
+      <p>Total Water Today: <span id="waterTotal">0</span> ml</p>
+    </div>
+
+    <div class="tracker-section" id="sleepTracker">
+      <h2>Sleep Tracking</h2>
+      <label for="sleepHours">Hours Slept Last Night</label>
+      <input id="sleepHours" type="number" min="0" max="24" placeholder="e.g. 7.5" />
+      <button id="saveSleepBtn">Save Sleep</button>
+      <p>Last Recorded Sleep: <span id="sleepRecord">None</span></p>
+    </div>
+
+    <div class="tracker-section" id="moodTracker">
+      <h2>Mood Tracking</h2>
+      <label for="moodSelect">How do you feel today?</label>
+      <select id="moodSelect">
+        <option value="" selected disabled>Select mood</option>
+        <option value="Happy">😊 Happy</option>
+        <option value="Neutral">😐 Neutral</option>
+        <option value="Sad">😞 Sad</option>
+        <option value="Stressed">😣 Stressed</option>
+        <option value="Energetic">⚡ Energetic</option>
+      </select>
+      <button id="saveMoodBtn">Save Mood</button>
+      <p>Last Recorded Mood: <span id="moodRecord">None</span></p>
+    </div>
+
+    <div class="tracker-section" id="dayPlan">
+      <h2>Plan Your Day</h2>
+      <textarea id="dayPlanInput" placeholder="Plan your day activities here..." rows="4"></textarea>
+      <button id="savePlanBtn">Save Plan</button>
+      <h3>Today's Plan:</h3>
+      <p id="displayPlan">No plan saved yet.</p>
+    </div>
+
+    <div class="tracker-section" id="exercisePlanner">
+      <h2>Exercise Planner</h2>
+      <form id="exerciseForm">
+        <input type="text" id="exerciseInput" placeholder="Add exercise (e.g. Jogging 30 mins)" required />
+        <button type="submit">Add Exercise</button>
+      </form>
+      <ul id="exerciseList"></ul>
+    </div>
+
+    <div id="congratulation" class="hidden">
+      <strong>Congratulations!</strong> You have completed all your planned exercises and day tasks today. Keep up the great work!
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
